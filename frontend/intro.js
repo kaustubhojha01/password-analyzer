@@ -228,16 +228,58 @@
       });
     }
 
-    // 6. Pointer-responsive highlight effect on feature cards
-    document.querySelectorAll('.intro-feature-card, .intro-principle-card').forEach((card) => {
-      card.addEventListener('pointermove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
+    // 6. Natural 3D tilt & floating hover interaction on interactive cards
+    const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (isFinePointer && !prefersReducedMotion) {
+      const tiltCards = document.querySelectorAll('.intro-feature-card, .intro-principle-card, .intro-step-card');
+      tiltCards.forEach((card) => {
+        let rafId = null;
+        let targetTiltX = 0;
+        let targetTiltY = 0;
+        const maxTilt = card.classList.contains('intro-feature-card') ? 5 : 4; // subtle natural tilt angle
+
+        card.addEventListener('pointerenter', () => {
+          card.style.setProperty('--tilt-lift', '-10px');
+        });
+
+        card.addEventListener('pointermove', (e) => {
+          const rect = card.getBoundingClientRect();
+          if (rect.width === 0 || rect.height === 0) return;
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+
+          // Calculate normalized coordinates (-1 to 1) from card center
+          const dx = ((x / rect.width) - 0.5) * 2;
+          const dy = ((y / rect.height) - 0.5) * 2;
+
+          targetTiltX = -dy * maxTilt;
+          targetTiltY = dx * maxTilt;
+
+          if (!rafId) {
+            rafId = requestAnimationFrame(() => {
+              card.style.setProperty('--tilt-x', `${targetTiltX.toFixed(2)}deg`);
+              card.style.setProperty('--tilt-y', `${targetTiltY.toFixed(2)}deg`);
+              rafId = null;
+            });
+          }
+        });
+
+        card.addEventListener('pointerleave', () => {
+          if (rafId) {
+            cancelAnimationFrame(rafId);
+            rafId = null;
+          }
+          // Smoothly restore to exact original position, rotation, and appearance
+          card.style.setProperty('--tilt-lift', '0px');
+          card.style.setProperty('--tilt-x', '0deg');
+          card.style.setProperty('--tilt-y', '0deg');
+        });
       });
-    });
+    }
   });
 
   // Export functions to window if needed

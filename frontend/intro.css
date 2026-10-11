@@ -675,14 +675,21 @@
   padding: 38px 32px;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --tilt-lift: 0px;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  transform: perspective(1000px) translateY(var(--tilt-lift, 0px)) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 360ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 360ms cubic-bezier(0.16, 1, 0.3, 1), border-color 360ms ease, background-color 360ms ease;
+  will-change: transform, box-shadow;
 }
 
-.intro-principle-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--intro-border-hover);
-  background: var(--intro-surface-elevated);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+@media (hover: hover) and (pointer: fine) {
+  .intro-principle-card:hover {
+    --tilt-lift: -10px;
+    border-color: var(--intro-border-hover);
+    background: var(--intro-surface-elevated);
+    box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.65), 0 0 35px -5px rgba(67, 139, 255, 0.22);
+  }
 }
 
 .intro-principle-card::before {
@@ -757,14 +764,41 @@
   color: inherit;
   cursor: pointer;
   min-height: 380px;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --tilt-lift: 0px;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  transform: perspective(1000px) translateY(var(--tilt-lift, 0px)) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 360ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 360ms cubic-bezier(0.16, 1, 0.3, 1), border-color 360ms ease, background-color 360ms ease;
+  will-change: transform, box-shadow;
 }
 
-.intro-feature-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(67, 139, 255, 0.4);
-  background: #0e162c;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(67, 139, 255, 0.15);
+@media (hover: hover) and (pointer: fine) {
+  .intro-feature-card:hover {
+    --tilt-lift: -10px;
+    background: #0e162c;
+    border-color: rgba(67, 139, 255, 0.45);
+    box-shadow: 0 26px 55px -10px rgba(0, 0, 0, 0.7), 0 0 45px -5px rgba(67, 139, 255, 0.25);
+  }
+
+  #cardFeatureAnalyzer:hover {
+    border-color: rgba(67, 139, 255, 0.5);
+    box-shadow: 0 26px 55px -10px rgba(0, 0, 0, 0.7), 0 0 45px -5px rgba(67, 139, 255, 0.3);
+  }
+
+  #cardFeatureGenerator:hover {
+    border-color: rgba(34, 212, 119, 0.5);
+    box-shadow: 0 26px 55px -10px rgba(0, 0, 0, 0.7), 0 0 45px -5px rgba(34, 212, 119, 0.3);
+  }
+
+  #cardFeatureBreach:hover {
+    border-color: rgba(152, 91, 255, 0.5);
+    box-shadow: 0 26px 55px -10px rgba(0, 0, 0, 0.7), 0 0 45px -5px rgba(152, 91, 255, 0.3);
+  }
+
+  #cardFeatureHistory:hover {
+    border-color: rgba(245, 166, 35, 0.5);
+    box-shadow: 0 26px 55px -10px rgba(0, 0, 0, 0.7), 0 0 45px -5px rgba(245, 166, 35, 0.3);
+  }
 }
 
 .card-top-bar {
@@ -1161,13 +1195,21 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: all 0.3s ease;
+  --tilt-lift: 0px;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  transform: perspective(1000px) translateY(var(--tilt-lift, 0px)) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition: transform 360ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 360ms cubic-bezier(0.16, 1, 0.3, 1), border-color 360ms ease, background-color 360ms ease;
+  will-change: transform, box-shadow;
 }
 
-.intro-step-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--intro-blue);
-  background: var(--intro-surface-elevated);
+@media (hover: hover) and (pointer: fine) {
+  .intro-step-card:hover {
+    --tilt-lift: -10px;
+    border-color: rgba(67, 139, 255, 0.45);
+    background: var(--intro-surface-elevated);
+    box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.65), 0 0 35px -5px rgba(67, 139, 255, 0.22);
+  }
 }
 
 .step-marker {
@@ -1368,5 +1410,20 @@
   .intro-pulse-dot,
   .intro-mouse-wheel {
     animation: none !important;
+  }
+
+  .intro-feature-card,
+  .intro-principle-card,
+  .intro-step-card {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+@media (hover: none) {
+  .intro-feature-card:hover,
+  .intro-principle-card:hover,
+  .intro-step-card:hover {
+    transform: none !important;
   }
 }

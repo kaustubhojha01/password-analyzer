@@ -425,9 +425,62 @@ document.getElementById('exportBtn').addEventListener('click', async () => {
   URL.revokeObjectURL(url);
 });
 
+/* ---------------- Floating Hover Interaction ---------------- */
+function initFloatingHover() {
+  const isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!isFinePointer || prefersReducedMotion) return;
+
+  const cards = document.querySelectorAll('.stat-card, #view-dashboard .card');
+  cards.forEach((card) => {
+    let rafId = null;
+    let targetTiltX = 0;
+    let targetTiltY = 0;
+    const isStat = card.classList.contains('stat-card');
+    const maxTilt = isStat ? 4.5 : 3.0;
+    const liftAmount = isStat ? '-10px' : '-8px';
+
+    card.addEventListener('pointerenter', () => {
+      card.style.setProperty('--tilt-lift', liftAmount);
+    });
+
+    card.addEventListener('pointermove', (e) => {
+      const rect = card.getBoundingClientRect();
+      if (rect.width === 0 || rect.height === 0) return;
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const dx = ((x / rect.width) - 0.5) * 2;
+      const dy = ((y / rect.height) - 0.5) * 2;
+
+      targetTiltX = -dy * maxTilt;
+      targetTiltY = dx * maxTilt;
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(() => {
+          card.style.setProperty('--tilt-x', `${targetTiltX.toFixed(2)}deg`);
+          card.style.setProperty('--tilt-y', `${targetTiltY.toFixed(2)}deg`);
+          rafId = null;
+        });
+      }
+    });
+
+    card.addEventListener('pointerleave', () => {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+      card.style.setProperty('--tilt-lift', '0px');
+      card.style.setProperty('--tilt-x', '0deg');
+      card.style.setProperty('--tilt-y', '0deg');
+    });
+  });
+}
+
 /* ---------------- Init ---------------- */
 (async function init() {
   initTheme();
+  initFloatingHover();
   const DEMO_PASSWORD = 'Tr0ub4dor&SunsetSky!';
   try {
     await refreshDashboard(DEMO_PASSWORD);
