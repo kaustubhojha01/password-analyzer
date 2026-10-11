@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cyber Password Analyzer | Advanced Security Assessment</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="intro.css" />
+</head>
+<body>
+
+  <!-- ======================================================================
+       CINEMATIC INTRODUCTION PAGE (Initial Entry Experience)
+       ====================================================================== -->
+  <div id="introPage" class="intro-page">
+
+    <!-- 4K 3D Circular Animated Cyber Rings Background (Whole Page) -->
+    <div class="intro-page-bg-root" aria-hidden="true">
+      <div class="intro-bg-cosmic-glow"></div>
+      <div class="intro-rings-orbit-container">
+        <div class="intro-rings-glow-core"></div>
+        <div class="intro-rings-rotator"></div>
+        <div class="intro-rings-counter-glow"></div>
+      </div>
+      <canvas id="ambient3DParticleCanvas" class="intro-ambient-particle-canvas"></canvas>
+      <div class="intro-bg-vignette-left"></div>
+    </div>
+
+    <!-- 1. MINIMAL NAVIGATION HEADER -->
+    <header class="intro-nav">
+      <div class="intro-nav-inner">
+        <a href="#intro-hero" class="intro-brand intro-scroll-trigger">
+          <div class="intro-brand-logo">🛡</div>
+          <div>
+            <span>CYBER PASSWORD ANALYZER</span>
+            <span class="intro-brand-badge">SEC-OPS #102</span>
+          </div>
+        </a>
+
+        <nav class="intro-nav-links">
+          <a href="#intro-hero" class="intro-nav-link intro-scroll-trigger">Overview</a>
+          <a href="#intro-principles" class="intro-nav-link intro-scroll-trigger">Security</a>
+          <a href="#intro-features" class="intro-nav-link intro-scroll-trigger">Features</a>
+          <a href="#intro-demo" class="intro-nav-link intro-scroll-trigger">Live Demo</a>
+          <a href="#intro-process" class="intro-nav-link intro-scroll-trigger">How It Works</a>
+        </nav>
+
+        <div class="intro-nav-actions">
+          <button class="intro-btn-dashboard open-dashboard-trigger" data-view="dashboard">
+            <span>Open Dashboard</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 2. CINEMATIC HERO SECTION -->
+    <section id="intro-hero" class="intro-hero">
+
+      <div class="intro-container">
+        <div class="intro-hero-meta">
+          <div class="intro-meta-pill">
+            <span class="intro-pulse-dot"></span>
+            DEFENSE GRADE: AAA
+          </div>
+          <div class="intro-meta-id">#102</div>
+        </div>
+
+        <h1 class="intro-hero-title">
+          <span class="line">YOUR PASSWORD.</span>
+          <span class="line">YOUR FIRST LINE</span>
+          <span class="line"><span class="intro-patterned-defense">OF DEFENSE.</span></span>
+        </h1>
+
+        <p class="intro-hero-subtitle">
+          Know your password strength. Understand your risks. Take control of your digital security.
+        </p>
+
+        <div class="intro-hero-ctas">
+          <a href="#intro-features" class="intro-btn-primary intro-scroll-trigger">
+            <span>Explore Your Security</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
+          <button class="intro-btn-secondary open-dashboard-trigger" data-view="dashboard">
+            <span>Enter Dashboard</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <a href="#intro-ribbons" class="intro-scroll-indicator intro-scroll-trigger">
+        <div class="intro-mouse-icon">
+          <div class="intro-mouse-wheel"></div>
+        </div>
+        <span>SCROLL TO DISCOVER</span>
+      </a>
+    </section>
+
+    <!-- 3. ANIMATED DIAGONAL RIBBONS (Transition element from reference recording) -->
+    <div id="intro-ribbons" class="intro-ribbon-section">
+      <div class="intro-ribbon-wrap">
+        <div class="intro-ribbon intro-ribbon-1">
+          <div class="intro-ribbon-track">
+            <span class="ribbon-word">ANALYZE <span class="ribbon-sep">/</span> DETECT <span class="ribbon-sep">/</span> UNDERSTAND <span class="ribbon-sep">/</span> PROTECT <span class="ribbon-sep">/</span> SHANNON ENTROPY <span class="ribbon-sep">/</span> K-ANONYMITY ZERO LEAK</span>
+            <span class="ribbon-word">ANALYZE <span class="ribbon-sep">/</span> DETECT <span class="ribbon-sep">/</span> UNDERSTAND <span class="ribbon-sep">/</span> PROTECT <span class="ribbon-sep">/</span> SHANNON ENTROPY <span class="ribbon-sep">/</span> K-ANONYMITY ZERO LEAK</span>
+            <span class="ribbon-word">ANALYZE <span class="ribbon-sep">/</span> DETECT <span class="ribbon-sep">/</span> UNDERSTAND <span class="ribbon-sep">/</span> PROTECT <span class="ribbon-sep">/</span> SHANNON ENTROPY <span class="ribbon-sep">/</span> K-ANONYMITY ZERO LEAK</span>
+          </div>
+        </div>
+
+        <div class="intro-ribbon intro-ribbon-2">
+          <div class="intro-ribbon-track reverse">
+            <span class="ribbon-word">ANALYZE <span class="ribbon-sep">/</span> DETECT <span class="ribbon-sep">/</span> UNDERSTAND <span class="ribbon-sep">/</span> PROTECT <span class="ribbon-sep">/</span> 5 CRACK MODELS <span class="ribbon-sep">/</span> 100% PRIVATE & SECURE</span>
+            <span class="ribbon-word">ANALYZE <span class="ribbon-sep">/</span> DETECT <span class="ribbon-sep">/</span> UNDERSTAND <span class="ribbon-sep">/</span> PROTECT <span class="ribbon-sep">/</span> 5 CRACK MODELS <span class="ribbon-sep">/</span> 100% PRIVATE & SECURE</span>
+            <span class="ribbon-word">ANALYZE <span class="ribbon-sep">/</span> DETECT <span class="ribbon-sep">/</span> UNDERSTAND <span class="ribbon-sep">/</span> PROTECT <span class="ribbon-sep">/</span> 5 CRACK MODELS <span class="ribbon-sep">/</span> 100% PRIVATE & SECURE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. INTRODUCE THE PRODUCT -->
+    <section id="intro-principles" class="intro-product-section">
+      <div class="intro-container">
+        <div class="intro-section-header">
+          <div class="intro-section-badge">Core Architecture</div>
+          <h2 class="intro-section-title">Security Starts With Understanding.</h2>
+          <p class="intro-section-desc">
+            Cyber Password Analyzer evaluates password strength, identifies algorithmic weaknesses, investigates known public data breaches, and equips you with actionable cybersecurity habits.
+          </p>
+        </div>
+
+        <div class="intro-principles-grid">
+          <div class="intro-principle-card">
+            <div class="principle-num">PRINCIPLE 01</div>
+            <h3 class="principle-title">MEASURE</h3>
+            <p class="principle-desc">
+              Calculate mathematically rigorous Shannon entropy, determine effective character search spaces, and simulate resistance against GPU offline clusters and online brute-force vectors.
+            </p>
+          </div>
+
+          <div class="intro-principle-card">
+            <div class="principle-num">PRINCIPLE 02</div>
+            <h3 class="principle-title">INVESTIGATE</h3>
+            <p class="principle-desc">
+              Detect common dictionary passwords, sequential characters, and keyboard walk patterns. Verify compromised status against 800M+ breach records using cryptographic k-anonymity.
+            </p>
+          </div>
+
+          <div class="intro-principle-card">
+            <div class="principle-num">PRINCIPLE 03</div>
+            <h3 class="principle-title">IMPROVE</h3>
+            <p class="principle-desc">
+              Synthesize cryptographically secure credentials via Node CSPRNG algorithms, review chronological audit records, and export comprehensive JSON security evaluations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. INTERACTIVE FEATURE SHOWCASE -->
+    <section id="intro-features" class="intro-features-section">
+      <div class="intro-container">
+        <div class="intro-section-header">
+          <div class="intro-section-badge">Feature Matrix</div>
+          <h2 class="intro-section-title">Engineered For Total Defense.</h2>
+          <p class="intro-section-desc">
+            Explore the four core modules designed to audit, harden, and manage your credential security posture.
+          </p>
+        </div>
+
+        <div class="intro-cards-grid">
+          <!-- CARD 01: PASSWORD ANALYZER -->
+          <div class="intro-feature-card open-dashboard-trigger" data-view="analyzer" id="cardFeatureAnalyzer">
+            <div>
+              <div class="card-top-bar">
+                <div class="card-issue-no">
+                  #01 <span class="badge badge-analyzer">ANALYZER</span>
+                </div>
+                <div class="card-icon-preview">🔍</div>
+              </div>
+              <div class="card-body">
+                <h3>Password Analyzer</h3>
+                <p>
+                  Comprehensive strength scoring, Shannon entropy calculation, character diversity audit, and multi-model cracking resistance estimates.
+                </p>
+                <div class="mini-preview-wrap">
+                  <div class="mini-analyzer-row">
+                    <span style="font-size:12px; color:var(--intro-text-muted);">Entropy: 105.1 Bits</span>
+                    <span class="mini-score-val">82/100</span>
+                    <span class="mini-pill">EXCELLENT</span>
+                  </div>
+                  <div class="mini-bar-track">
+                    <div class="mini-bar-fill" style="width: 82%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <span>Launch Password Analyzer</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+
+          <!-- CARD 02: PASSWORD GENERATOR -->
+          <div class="intro-feature-card open-dashboard-trigger" data-view="generator" id="cardFeatureGenerator">
+            <div>
+              <div class="card-top-bar">
+                <div class="card-issue-no">
+                  #02 <span class="badge badge-generator">CSPRNG</span>
+                </div>
+                <div class="card-icon-preview">⚙</div>
+              </div>
+              <div class="card-body">
+                <h3>Password Generator</h3>
+                <p>
+                  Cryptographically secure password synthesizer using Node crypto.randomInt, customizable symbol sets, length sliders, and ambiguous character filtering.
+                </p>
+                <div class="mini-preview-wrap">
+                  <div class="mini-chips-row">
+                    <span class="mini-chip active">A-Z (Upper)</span>
+                    <span class="mini-chip active">a-z (Lower)</span>
+                    <span class="mini-chip active">0-9 (Digits)</span>
+                    <span class="mini-chip active">!@#$ (Special)</span>
+                    <span class="mini-chip">Len: 16</span>
+                  </div>
+                  <div style="font-family:var(--intro-font-mono); font-size:13px; color:var(--intro-cyan); margin-top:8px;">
+                    Tr0ub4dor&SunsetSky!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <span>Open Password Generator</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+
+          <!-- CARD 03: BREACH CHECKER -->
+          <div class="intro-feature-card open-dashboard-trigger" data-view="breach" id="cardFeatureBreach">
+            <div>
+              <div class="card-top-bar">
+                <div class="card-issue-no">
+                  #03 <span class="badge badge-breach">INTELLIGENCE</span>
+                </div>
+                <div class="card-icon-preview">🛡</div>
+              </div>
+              <div class="card-body">
+                <h3>Breach Checker</h3>
+                <p>
+                  Query against 800M+ compromised passwords using Have I Been Pwned's k-anonymity protocol. Only a 5-character SHA-1 hash prefix is ever transmitted.
+                </p>
+                <div class="mini-preview-wrap">
+                  <div style="display:flex; justify-content:space-between; align-items:center; font-size:12px;">
+                    <span style="color:var(--intro-text-muted);">k-Anonymity Model</span>
+                    <span style="color:var(--intro-green); font-weight:700;">100% Zero-Knowledge</span>
+                  </div>
+                  <div style="font-family:var(--intro-font-mono); font-size:11px; color:var(--intro-text-muted); margin-top:6px;">
+                    SHA-1 Prefix: <span style="color:#ffffff;">5BAA6</span> (Remaining 35 chars verified locally)
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <span>Launch Breach Checker</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+
+          <!-- CARD 04: HISTORY & REPORTS -->
+          <div class="intro-feature-card open-dashboard-trigger" data-view="history" id="cardFeatureHistory">
+            <div>
+              <div class="card-top-bar">
+                <div class="card-issue-no">
+                  #04 <span class="badge badge-history">AUDIT</span>
+                </div>
+                <div class="card-icon-preview">🕐</div>
+              </div>
+              <div class="card-body">
+                <h3>History & Reports</h3>
+                <p>
+                  Review chronological security evaluations, inspect score trends via interactive SVG charts, and export structured JSON audit reports.
+                </p>
+                <div class="mini-preview-wrap">
+                  <div style="display:flex; justify-content:space-between; align-items:center; font-size:12px;">
+                    <span style="color:var(--intro-text-muted);">Encrypted History Ledger</span>
+                    <span style="color:var(--intro-amber); font-weight:700;">JSON Export Ready</span>
+                  </div>
+                  <div style="display:flex; gap:4px; height:20px; align-items:flex-end; margin-top:8px;">
+                    <div style="height:40%; width:16%; background:rgba(67,139,255,0.4); border-radius:2px;"></div>
+                    <div style="height:65%; width:16%; background:rgba(67,139,255,0.6); border-radius:2px;"></div>
+                    <div style="height:50%; width:16%; background:rgba(67,139,255,0.5); border-radius:2px;"></div>
+                    <div style="height:85%; width:16%; background:rgba(67,139,255,0.8); border-radius:2px;"></div>
+                    <div style="height:70%; width:16%; background:rgba(67,139,255,0.7); border-radius:2px;"></div>
+                    <div style="height:100%; width:16%; background:var(--intro-green); border-radius:2px;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <span>View Audit History</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. INTERACTIVE PASSWORD DEMONSTRATION (Educational Sandbox) -->
+    <section id="intro-demo" class="intro-demo-section">
+      <div class="intro-container">
+        <div class="intro-demo-box">
+          <div class="demo-grid">
+            <div class="demo-input-container">
+              <div class="intro-section-badge">Educational Sandbox</div>
+              <h2 style="font-family:var(--intro-font-display); font-size:32px; font-weight:800; margin:0; color:#fff;">
+                Test Live Password Mechanics
+              </h2>
+              <p style="color:var(--intro-text-muted); font-size:14.5px; margin:0 0 8px;">
+                Interact with our client-side entropy engine. Test sample strings or generate new samples locally.
+              </p>
+
+              <div class="demo-input-header">
+                <span class="demo-input-label">Sample Password Input</span>
+                <span style="font-size:12px; color:var(--intro-cyan);">Interactive Simulation</span>
+              </div>
+
+              <div class="demo-input-wrapper">
+                <input type="password" id="demoPasswordInput" class="demo-password-field" value="K9#mQ2$vL8!zW5@" autocomplete="off" spellcheck="false" />
+                <button type="button" id="demoToggleVis" class="demo-toggle-vis" title="Toggle visibility">👁</button>
+              </div>
+
+              <div class="demo-controls-row">
+                <button type="button" id="demoRollBtn" class="demo-roll-btn">
+                  <span>⚡ Roll Sample Password</span>
+                </button>
+              </div>
+
+              <div class="demo-privacy-notice">
+                <span>🛡</span>
+                <span>Zero-Transmission Guarantee: This demo executes entirely in browser memory. Passwords are never sent over the wire, logged, or saved.</span>
+              </div>
+            </div>
+
+            <div class="demo-metrics-panel">
+              <div class="demo-score-hero">
+                <div>
+                  <div style="font-size:11.5px; color:var(--intro-text-muted); font-family:var(--intro-font-mono); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">Security Score</div>
+                  <div id="demoScoreNum" class="demo-score-num">100/100</div>
+                </div>
+                <div id="demoScoreLabel" class="demo-score-label">EXCELLENT</div>
+              </div>
+
+              <div class="demo-entropy-row">
+                <span>Shannon Entropy</span>
+                <span id="demoEntropyVal" class="demo-entropy-val">105.1 bits</span>
+              </div>
+
+              <div class="demo-entropy-row">
+                <span>Offline GPU Crack Time</span>
+                <span id="demoCrackVal" class="demo-entropy-val" style="color:var(--intro-green);">Millions of Years</span>
+              </div>
+
+              <div>
+                <div style="font-size:11.5px; color:var(--intro-text-muted); font-family:var(--intro-font-mono); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:12px;">Character Pool Coverage</div>
+                <div class="demo-checks-list">
+                  <div class="demo-check-item" id="checkUpper"><span class="demo-check-dot"></span> Uppercase (A-Z)</div>
+                  <div class="demo-check-item" id="checkLower"><span class="demo-check-dot"></span> Lowercase (a-z)</div>
+                  <div class="demo-check-item" id="checkDigits"><span class="demo-check-dot"></span> Numbers (0-9)</div>
+                  <div class="demo-check-item" id="checkSpecial"><span class="demo-check-dot"></span> Special (!@#$)</div>
+                  <div class="demo-check-item" id="checkLength" style="grid-column: span 2;"><span class="demo-check-dot"></span> Recommended Length (12+ Chars)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. HOW IT WORKS TIMELINE -->
+    <section id="intro-process" class="intro-process-section">
+      <div class="intro-container">
+        <div class="intro-section-header">
+          <div class="intro-section-badge">Methodology</div>
+          <h2 class="intro-section-title">The Four Pillars Of Protection.</h2>
+          <p class="intro-section-desc">
+            A disciplined, four-stage cybersecurity workflow designed to turn vulnerable authentication habits into impregnable defenses.
+          </p>
+        </div>
+
+        <div class="intro-steps-grid">
+          <div class="intro-step-card">
+            <div class="step-marker">01</div>
+            <h3 class="step-title">ANALYZE</h3>
+            <p class="step-desc">
+              Evaluate total character length, symbol entropy pools, and cryptographic structure in real time.
+            </p>
+          </div>
+
+          <div class="intro-step-card">
+            <div class="step-marker">02</div>
+            <h3 class="step-title">UNDERSTAND</h3>
+            <p class="step-desc">
+              Calculate search-space bounds and simulate crack times across 5 distinct attacker vectors.
+            </p>
+          </div>
+
+          <div class="intro-step-card">
+            <div class="step-marker">03</div>
+            <h3 class="step-title">INVESTIGATE</h3>
+            <p class="step-desc">
+              Cross-reference against 800M+ pwned records with k-anonymity SHA-1 privacy preservation.
+            </p>
+          </div>
+
+          <div class="intro-step-card">
+            <div class="step-marker">04</div>
+            <h3 class="step-title">IMPROVE</h3>
+            <p class="step-desc">
+              Generate CSPRNG randomized replacements and maintain unbroken defense audit history.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FINAL CALL TO ACTION -->
+    <section class="intro-cta-section">
+      <div class="intro-container">
+        <div class="intro-cta-shield-wrap">🛡</div>
+        <h2 class="intro-cta-title">MAKE EVERY PASSWORD COUNT.</h2>
+        <p class="intro-cta-desc">
+          Understand your security. Strengthen your defenses. Start with one password.
+        </p>
+
+        <div class="intro-cta-actions">
+          <button class="intro-btn-primary open-dashboard-trigger" data-view="dashboard" id="introCtaEnterDash">
+            <span>Launch Security Dashboard</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <a href="#intro-features" class="intro-btn-secondary intro-scroll-trigger">
+            <span>Explore Features</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer class="intro-footer">
+      <div class="intro-container">
+        <div class="intro-footer-inner">
+          <div class="intro-footer-brand">
+            <div class="intro-brand">
+              <div class="intro-brand-logo">🛡</div>
+              <span>CYBER PASSWORD ANALYZER</span>
+            </div>
+            <p class="intro-footer-desc">
+              Advanced cryptographic password assessment, Shannon entropy calculation, k-anonymity breach verification, and secure CSPRNG generation dashboard.
+            </p>
+          </div>
+
+          <div class="intro-footer-links">
+            <a href="#intro-hero" class="intro-footer-link intro-scroll-trigger">Overview</a>
+            <a href="#intro-features" class="intro-footer-link intro-scroll-trigger">Features</a>
+            <a href="#intro-demo" class="intro-footer-link intro-scroll-trigger">Live Demo</a>
+            <a href="#intro-process" class="intro-footer-link intro-scroll-trigger">How It Works</a>
+            <a href="#dashboard" class="intro-footer-link open-dashboard-trigger" data-view="dashboard">Open Dashboard</a>
+          </div>
+        </div>
+
+        <div class="intro-footer-bottom">
+          <div>© 2026 CYBER PASSWORD ANALYZER. PRODUCTION DEFENSE SUITE.</div>
+          <div>POWERED BY SHANNON ENTROPY & K-ANONYMITY</div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <!-- ======================================================================
+       EXISTING CYBER PASSWORD ANALYZER DASHBOARD APP (Intact & Fully Functional)
+       ====================================================================== -->
+  <div class="app" id="dashboardApp" style="display: none;">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">🛡</div>
+        <div>
+          <div class="brand-title">Cyber Password Analyzer</div>
+          <div class="brand-sub">Advanced Security Assessment</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <!-- Return to Introduction Page button -->
+        <button class="nav-item return-intro-trigger" style="color:var(--blue); font-weight:600;">
+          <span class="nav-ico">←</span>Introduction
+        </button>
+        <button class="nav-item active" data-view="dashboard"><span class="nav-ico">▦</span>Dashboard</button>
+        <button class="nav-item" data-view="analyzer"><span class="nav-ico">🔍</span>Password Analyzer</button>
+        <button class="nav-item" data-view="generator"><span class="nav-ico">⚙</span>Password Generator</button>
+        <button class="nav-item" data-view="breach"><span class="nav-ico">🛡</span>Breach Checker <span class="badge-new">New</span></button>
+        <button class="nav-item" data-view="history"><span class="nav-ico">🕐</span>History</button>
+        <button class="nav-item" data-view="tips"><span class="nav-ico">💡</span>Secure Tips</button>
+        <button class="nav-item" data-view="settings"><span class="nav-ico">⚙</span>Settings</button>
+        <button class="nav-item" data-view="about"><span class="nav-ico">ⓘ</span>About</button>
+      </nav>
+
+      <div class="sidebar-card">
+        <div class="sidebar-card-title">Password Health</div>
+        <div class="gauge-wrap">
+          <svg viewBox="0 0 120 120" class="health-gauge">
+            <circle cx="60" cy="60" r="52" class="gauge-track"/>
+            <circle id="healthArc" cx="60" cy="60" r="52" class="gauge-arc"/>
+          </svg>
+          <div class="gauge-center">
+            <div id="healthPct" class="gauge-pct">--%</div>
+          </div>
+        </div>
+        <div id="healthLabel" class="gauge-label good">Excellent</div>
+        <div class="gauge-sub">Keep using strong passwords!</div>
+      </div>
+
+      <div class="sidebar-card row-card">
+        <span class="nav-ico" id="sidebarThemeIcon">🌙</span>
+        <span>Dark Mode</span>
+        <label class="switch">
+          <input type="checkbox" id="darkModeToggle" checked />
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="version">v1.0.0</div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-title"><span class="nav-ico">▦</span><span id="viewTitle">Dashboard</span></div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <button class="return-intro-btn return-intro-trigger">← Intro Page</button>
+          <button class="export-btn" id="exportBtn">⭳ Export Report</button>
+        </div>
+      </header>
+
+      <!-- DASHBOARD VIEW -->
+      <section id="view-dashboard" class="view">
+
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-icon blue">🛡</div>
+            <div class="stat-body">
+              <div class="stat-label">Security Score</div>
+              <div class="stat-value" id="statScore">--/100</div>
+              <div class="stat-tag good" id="statScoreTag">--</div>
+            </div>
+            <svg class="sparkline" id="sparkScore" viewBox="0 0 200 40" preserveAspectRatio="none"></svg>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon purple">〰</div>
+            <div class="stat-body">
+              <div class="stat-label">Entropy Score</div>
+              <div class="stat-value" id="statEntropy">-- bits</div>
+              <div class="stat-tag purple" id="statEntropyTag">--</div>
+            </div>
+            <svg class="sparkline" id="sparkEntropy" viewBox="0 0 200 40" preserveAspectRatio="none"></svg>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon amber">🕐</div>
+            <div class="stat-body">
+              <div class="stat-label">Crack Time</div>
+              <div class="stat-value small" id="statCrackTime">--</div>
+              <div class="stat-tag amber" id="statCrackTag">--</div>
+            </div>
+            <svg class="sparkline" id="sparkCrack" viewBox="0 0 200 40" preserveAspectRatio="none"></svg>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon green">🔒</div>
+            <div class="stat-body">
+              <div class="stat-label">Password Length</div>
+              <div class="stat-value" id="statLength">--</div>
+              <div class="stat-tag good" id="statLengthTag">--</div>
+            </div>
+            <svg class="sparkline" id="sparkLength" viewBox="0 0 200 40" preserveAspectRatio="none"></svg>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-title">Password Strength Breakdown</div>
+            <div id="breakdownList" class="breakdown-list"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Crack Time Estimation <span class="info-ico" title="Estimated time for different attack methods">ⓘ</span></div>
+            <table class="crack-table" id="crackTable">
+              <thead><tr><th>Attack Type</th><th>Estimated Time</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div class="card center-card">
+            <div class="card-title self-start">Password Entropy</div>
+            <div class="entropy-gauge-wrap">
+              <svg viewBox="0 0 160 160" class="entropy-gauge">
+                <defs>
+                  <linearGradient id="entropyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#3b82f6"/>
+                    <stop offset="100%" stop-color="#a855f7"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="80" cy="80" r="68" class="gauge-track"/>
+                <circle id="entropyArc" cx="80" cy="80" r="68" class="entropy-arc"/>
+              </svg>
+              <div class="entropy-center">
+                <div class="entropy-value" id="entropyValue">--</div>
+                <div class="entropy-unit">bits</div>
+              </div>
+            </div>
+            <div class="entropy-label" id="entropyLabel">--</div>
+            <div class="entropy-sub">Higher entropy means more randomness and better security</div>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="card wide-card">
+            <div class="card-title">Password Strength History</div>
+            <svg class="history-chart" id="historyChart" viewBox="0 0 560 220" preserveAspectRatio="none"></svg>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Common Weaknesses</div>
+            <div id="weaknessList" class="weakness-list"></div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Top Tips for Strong Passwords <span class="info-ico" title="Best practices">ⓘ</span></div>
+            <ul class="tips-list">
+              <li>✅ Use at least 12-16 characters</li>
+              <li>✅ Include uppercase and lowercase letters</li>
+              <li>✅ Add numbers and special characters</li>
+              <li>✅ Avoid common words and patterns</li>
+              <li>✅ Use a unique password for each account</li>
+              <li>✅ Consider using a password manager</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-title">Recent Password Analysis</div>
+            <table class="recent-table">
+              <thead>
+                <tr><th>Password (hidden)</th><th>Score</th><th>Strength</th><th>Crack Time</th><th>Date</th></tr>
+              </thead>
+              <tbody id="recentTableBody"></tbody>
+            </table>
+          </div>
+
+          <div class="card breach-card">
+            <div class="breach-icon">🛡</div>
+            <div class="card-title">Breach Check (Have I Been Pwned)</div>
+            <p class="breach-desc">Check if your password has been found in any data breaches.</p>
+            <button class="check-btn" id="dashBreachBtn">Check Now</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- PASSWORD ANALYZER VIEW -->
+      <section id="view-analyzer" class="view hidden">
+        <div class="card">
+          <div class="card-title">Analyze a Password</div>
+          <div class="input-row">
+            <input type="password" id="analyzerInput" placeholder="Type a password to analyze..." autocomplete="new-password" />
+            <button id="toggleAnalyzerVisibility" class="ghost-btn">👁</button>
+            <button id="analyzeBtn" class="check-btn">Analyze</button>
+          </div>
+          <div id="analyzerResult" class="analyzer-result"></div>
+        </div>
+      </section>
+
+      <!-- PASSWORD GENERATOR VIEW -->
+      <section id="view-generator" class="view hidden">
+        <div class="card">
+          <div class="card-title">Generate a Strong Password</div>
+          <div class="generated-display" id="generatedDisplay">Click Generate to create a password</div>
+          <div class="gen-options">
+            <label>Length: <span id="lengthVal">16</span>
+              <input type="range" id="genLength" min="6" max="32" value="16" />
+            </label>
+            <label><input type="checkbox" id="genUpper" checked /> Uppercase (A-Z)</label>
+            <label><input type="checkbox" id="genLower" checked /> Lowercase (a-z)</label>
+            <label><input type="checkbox" id="genDigits" checked /> Numbers (0-9)</label>
+            <label><input type="checkbox" id="genSpecial" checked /> Special Characters</label>
+            <label><input type="checkbox" id="genAmbiguous" /> Exclude ambiguous characters</label>
+          </div>
+          <button id="generateBtn" class="check-btn">Generate Password</button>
+          <div id="generatorResult" class="analyzer-result"></div>
+        </div>
+      </section>
+
+      <!-- BREACH CHECKER VIEW -->
+      <section id="view-breach" class="view hidden">
+        <div class="card">
+          <div class="card-title">Breach Check (Have I Been Pwned)</div>
+          <p class="breach-desc">Your password is never sent in full — only a partial hash prefix is used (k-anonymity), so the real password never leaves this server.</p>
+          <div class="input-row">
+            <input type="password" id="breachInput" placeholder="Enter a password to check..." autocomplete="new-password" />
+            <button id="checkBreachBtn" class="check-btn">Check Now</button>
+          </div>
+          <div id="breachResult" class="analyzer-result"></div>
+        </div>
+      </section>
+
+      <!-- HISTORY VIEW -->
+      <section id="view-history" class="view hidden">
+        <div class="card">
+          <div class="card-title">Analysis History</div>
+          <table class="recent-table">
+            <thead>
+              <tr><th>Password (hidden)</th><th>Score</th><th>Strength</th><th>Crack Time</th><th>Date</th></tr>
+            </thead>
+            <tbody id="historyTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECURE TIPS VIEW -->
+      <section id="view-tips" class="view hidden">
+        <div class="card">
+          <div class="card-title">Secure Password Tips</div>
+          <ul class="tips-list large">
+            <li>✅ Use at least 12-16 characters — longer is always stronger.</li>
+            <li>✅ Mix uppercase, lowercase, numbers, and special characters.</li>
+            <li>✅ Avoid dictionary words, names, and common patterns like "123" or "qwerty".</li>
+            <li>✅ Never reuse the same password across multiple accounts.</li>
+            <li>✅ Use a reputable password manager to generate and store passwords.</li>
+            <li>✅ Enable two-factor authentication (2FA) wherever possible.</li>
+            <li>✅ Change passwords immediately if a service reports a breach.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SETTINGS VIEW -->
+      <section id="view-settings" class="view hidden">
+        <div class="card">
+          <div class="card-title">Settings</div>
+          <div class="settings-row">
+            <span>Dark Mode</span>
+            <label class="switch">
+              <input type="checkbox" id="settingsDarkToggle" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="settings-row">
+            <span>Save analysis history</span>
+            <label class="switch">
+              <input type="checkbox" id="settingsSaveHistory" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT VIEW -->
+      <section id="view-about" class="view hidden">
+        <div class="card">
+          <div class="card-title">About Cyber Password Analyzer</div>
+          <p class="breach-desc">
+            Cyber Password Analyzer is an educational security tool that evaluates password
+            strength using entropy calculations, pattern detection, and crack-time estimation
+            across multiple attack models. It also lets you generate strong random passwords
+            and check whether a password has appeared in known public data breaches, using the
+            Have I Been Pwned k-anonymity API. Version 1.0.0.
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+  <script src="intro.js"></script>
+  <script src="ambient-particles.js"></script>
+</body>
+</html>

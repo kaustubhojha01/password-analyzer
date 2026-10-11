@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: cyber-password-analyzer
+    runtime: node
+    plan: free
+    buildCommand: npm install && cd backend && npm install
+    startCommand: node backend/server.js
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: SUPABASE_URL
+        value: https://xxtkgqzhznqlciegywqc.supabase.co
+      - key: SUPABASE_ANON_KEY
+        value: sb_publishable_eDkjSiwE52Nihbum6axgcw_SdGj2o2C
