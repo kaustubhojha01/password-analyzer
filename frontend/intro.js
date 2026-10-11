@@ -32,6 +32,7 @@
     if (window.ambient3DParticlesInstance) {
       window.ambient3DParticlesInstance.start();
     }
+    initScrollReveal();
   }
 
   function showDashboard(targetView = 'dashboard') {
@@ -52,6 +53,7 @@
     if (window.location.hash !== `#${targetView}`) {
       history.pushState(null, '', `#${targetView}`);
     }
+    initScrollReveal();
   }
 
   function handleRoute() {
@@ -280,11 +282,66 @@
         });
       });
     }
+
+    // 7. Scroll-Triggered Reveal Controller (Viewport Pop-up)
+    initScrollReveal();
   });
+
+  /* ---------------- Scroll-Triggered Reveal Controller ---------------- */
+  function initScrollReveal() {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    // Enable CSS reveal styles now that JS is running
+    document.documentElement.classList.add('has-scroll-reveal');
+
+    // Automatically ensure all target sections, cards, and feature blocks are registered
+    const targetSelectors = [
+      '.intro-section-header',
+      '.intro-principle-card',
+      '.intro-feature-card',
+      '.intro-demo-box',
+      '.intro-step-card',
+      '.intro-cta-section .intro-container',
+      '.intro-footer .intro-container',
+      '.stat-grid .stat-card',
+      '#view-dashboard .card'
+    ];
+    targetSelectors.forEach((sel) => {
+      document.querySelectorAll(sel).forEach((el) => {
+        el.classList.add('scroll-reveal');
+      });
+    });
+
+    const revealElements = document.querySelectorAll('.scroll-reveal:not(.is-revealed)');
+    if (!revealElements.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      revealElements.forEach((el) => el.classList.add('is-revealed'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    revealElements.forEach((el) => observer.observe(el));
+  }
 
   // Export functions to window if needed
   window.CyberIntro = {
     showIntro,
     showDashboard,
+    initScrollReveal,
   };
+  window.initScrollReveal = initScrollReveal;
 })();

@@ -27,6 +27,9 @@ navItems.forEach((btn) => {
     if (viewEl) viewEl.classList.remove('hidden');
     viewTitle.textContent = TITLES[target] || 'Dashboard';
     if (target === 'history') loadHistoryView();
+    if (typeof window.initScrollReveal === 'function') {
+      window.initScrollReveal();
+    }
   });
 });
 
